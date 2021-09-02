@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+    background-color: rgb(27, 27, 27);
+}
+
+header {
+    width: 100%;
+    background-color: black;
+    height: auto;
+}
+
+header p {
+    width: 100%;
+    height: auto;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 500%;
+    text-align: center;
+    color: white;
+}
+
+#toast {
+    height: 90%;
+}
+
+#losuj_toast {
+    width: 90%;
+    height: 10%;
+}
+
+#losuj_toast {
+    height: 25%;
+    width: 50%;
+    background-color: yellow;
+    margin-left: 25%;
+    border: 5px solid black;
+    border-radius: 10%;
+    font-size: 300%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 5%;
+}
+
+#toast_tekst {
+    font-size: 300%;
+    text-align: center;
+    margin: 5%;
+    color: rgb(226, 226, 226);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+    <meta http-equiv="Content-Language" content="pl" />
+    <title>Nie Pie***ol Polewaj</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <header>
+        <p>NIE PIERDOL POLEWAJ</p>
+    </header>
+
+    <section id="toast">
+
+        <p id="toast_tekst"></p>
+        </br>
+
+        <button id="losuj_toast" onclick="losowanie_toastu()">LOSUJ</button>
+
+    </section>
+
+    <footer></footer>
+
+</body>
+
+<script>
+    var il_toastow = 0;
+
+    var toast;
+
+    toast = new Array(107)
+    toast[0] = "Piję by paść ,Padam by wstać, Wstaję by pić, Piję by żyć!";
+    toast[1] = "Niech żyje, kto wypije.";
+    toast[2] = "Wódka grzeje, wódka chłodzi, wódka nigdy nie zaszkodzi.";
+    toast[3] = "Kieliszeczku mój kochany, Obalałeś chłopy, panny, Obaliłeś i mnie nieraz, Więc obalam Cię ja teraz.";
+    toast[4] = "Trzaśniem bo zaśniem!";
+    toast[5] = "Sto lat zdrowia, beczka wina, dobry sąsiad i dziewczyna.";
+    toast[6] = "Wypijmy za to, że nie ma na świecie takiej rzeczy, za którą nie można by wypić.";
+    toast[7] = "Człowiek nie wielbłąd – napić się musi.";
+    toast[8] = "No to chlup w ten głupi dziób.";
+    toast[9] = "Każdy wypity kieliszek, to gwóźdź do naszej trumny. Pijmy więc tak, by trumna się nie rozpadła!";
+    toast[10] = "Wypijmy za to, byśmy mieli tyle zmartwień, ile kropli pozostanie w naszych kieliszkach.";
+    toast[11] = "Zebraliśmy się tu po to, by sobie popić. Wypijmy za to, żeśmy się tu zebrali.";
+    toast[12] = "Pragnę życzyć naszym paniom, by zawsze miały cztery zwierzęta: norkę na ramionach, jaguara w garażu, lwa w łóżku i osła, który by za to wszystko płacił!";
+    toast[13] = "Na zdrowie, bo na rozum już za późno.";
+    toast[14] = "Noch ein Glass, noch ein Flasche, żeby było zdrowie nasze.";
+    toast[15] = "Za pomyślność ferii zimowych! Żeby nie było tak jak w zeszłym roku, kiedy pojechałem w góry i złamałem nogę, na całe szczęście nie swoją!";
+    toast[16] = "Choć nas gnębi smutku zmora, pijmy zdrowie fundatora.";
+    toast[17] = "Lepiej być znanym pijakiem, niż anonimowym alkoholikiem.";
+    toast[18] = "Wypijmy za tych, co nie piją, bo już swoje w życiu wypili. A także za to, aby w swoim postanowieniu wytrwali.";
+    toast[19] = "Pijmy szybciej, bo się ściemnia. Chluśniem, bo uśniem.";
+    toast[20] = "Dziewczyna szła wieczorem ulica i usłyszała za sobą kroki. Obejrzała się, zobaczyła przystojnego chłopaka. Obejrzała się drugi raz, chłopak wciąż szedł za nią. Uznała, ze warto na niego poczekać. Obejrzała się po raz trzeci chłopaka już nie było. Wypijmy za to, by pracownicy kanalizacji miejskiej nie zapominali zamykać studzienek!";
+    toast[21] = "Pierdykniem, bo odwykniem.";
+    toast[22] = "Za zdrowie gospodarzy! Niech zawsze mają takich fajnych gości jak dziś.";
+    toast[23] = "Z wódką walka nierówna – ty ją w mordę, a ona Cię na ziemię.";
+    toast[24] = "O czym tu gadać, jeśli nie ma o czym mówić.";
+    toast[25] = "Zdrowie wasze w gardło nasze!";
+    toast[26] = "Poloneza czas zacząć.";
+    toast[27] = "Rybka lubi popływać.";
+    toast[28] = "Piłeś – nie jedź, nie piłeś – wypij.";
+    toast[29] = "Ciach babkę w piach.";
+    toast[30] = "Można wypić po kubeczku, spokój w głowie, w porządeczku.";
+    toast[31] = "No, wódka stygnie.";
+    toast[32] = "Jak wiele czasu traci się w życiu na niepicie wódki.";
+    toast[33] = "Pijmy, bo szkło nasiąka.";
+    toast[34] = "Klarowne piwo i kolor słomkowy, to raj w gębie i humor dla głowy.";
+    toast[35] = "Morda się śmieje, gdy piwo się leje.";
+    toast[36] = "Oby nam się dobrze działo. A że działo to armata, to żeby nam się dobrze armaciło.";
+    toast[37] = "Od wódki głowa nie boli, tylko od zagrychy.";
+    toast[38] = "Gdy obniża ci się krzywa, napij się dobrego piwa.";
+    toast[39] = "Niech się piwo leje z nieba, bo humoru nam potrzeba.";
+    toast[40] = "Nie ważne jaki napitek, byle tylko człowieka sponiewierał.";
+    toast[41] = "Byle co, byle gdzie, byle jak – byle sponiewierało.";
+    toast[42] = "Jeśli chcesz bym z Tobą był, wiedz że piwo będę pił.";
+    toast[43] = "Chcesz być piękny i być młody wypij piwo dla pogody.";
+    toast[44] = "Osoba godna pije do dna";
+    toast[45] = "Od pieluchy aż po grób, zawsze piwko sobie kup.";
+    toast[46] = "Za tych, którzy nie mogą.";
+    toast[47] = "Malutki kieliszek nie dojdzie do kiszek";
+    toast[48] = "Kto se z rana piwko machnie temu z ryja ładnie pachnie.";
+    toast[49] = "No to po szklanie i na rusztowanie.";
+    toast[50] = "Wykształcenie nie piwo – nie musi być pełne.";
+    toast[51] = "Jabol smaczny, jabol zdrowy, jabol napój owocowy.";
+    toast[52] = "Wódka jest lepsza od chleba, bo gryźć nie trzeba.";
+    toast[53] = "Nic tak życia nie upiększa, jak jabola dawka większa.";
+    toast[54] = "Dobre piwo jest jak halny, wzmaga popęd seksualny.";
+    toast[55] = "Chcesz mieć dzieci silne, zdrowe, kup im wino owocowe.";
+    toast[56] = "Czas życia krótki, kropnijmy wódki";
+    toast[57] = "Tanie wino jest dobre, bo jest dobre i tanie.";
+    toast[58] = "Słonko świeci, ptaszek kwili, może byśmy coś wypili";
+    toast[59] = "Najlepsza chwila poranka: jabol i marihuanka.";
+    toast[60] = "Bez wypicia nie ma życia.";
+    toast[61] = "Alkohol zabija powoli, ale nam się nigdzie nie śpieszy";
+    toast[62] = "Trzeźwość to stan przejściowy.";
+    toast[63] = "Kwas dla mas.";
+    toast[64] = "Niedaleko pada Polak od jabola";
+    toast[65] = "Dobra wódka, pita w miarę nie szkodzi nawet w największych ilościach.";
+    toast[66] = "Nie ma brzydkich kobiet, tylko czasem wódki za mało.";
+    toast[67] = "Pić i pieprzyć, nie żałować, bida musi pofolgować.";
+    toast[68] = "Gorzka wódka, kwaśna mina, Ktoś tu polać zapomina!";
+    toast[69] = "Za tych co na morzu się nie pije, Ci na morzu sobie poradzą… Za tych co na lądzie!";
+    toast[70] = "Nigdy trzeźwi, zawsze wlani – pracownicy budowlani.";
+    toast[71] = "Kto pije – ten śpi. Kto śpi – nie grzeszy. Więc pijmy!";
+    toast[72] = "Czas się naEBać.";
+    toast[73] = "Hej, żywo na piwo.";
+    toast[74] = "Za konie, za Panie i tych co wsiadają na nie.";
+    toast[75] = "Czas to pieniądz, pieniądz to piwo, więc pij to piwo bo szkoda czasu.";
+    toast[76] = "Wypijmy za mądrych rodziców naszych przyszłych dzieci.";
+    toast[77] = "Byłe zdrowie byłej żony Pije właśnie były mąż! To mój toast ulubiony, Który mógłbym wznosić wciąż.";
+    toast[78] = "Lepszy kogut na głowie, niż paw w kieszeni.";
+    toast[79] = "Kubek wódki, albo dwa, by nauka lepiej szła.";
+    toast[80] = "Żadna głupia Coca-Cola nie zastąpi nam jabola.";
+    toast[81] = "Pacierza i wódki nigdy nie odmawiam.";
+    toast[82] = "Pijąc piwo, jedząc śledzie będziem silni jak niedźwiedzie.";
+    toast[83] = "Gorzka wódka, ostre flaki, A w kieliszku znowu braki!";
+    toast[84] = "Za wszystkich abstynentów – oby się nawrócili.";
+    toast[85] = "Pijmy, bo szkło korzenie zapuszcza.";
+    toast[86] = "Najlepsza chwila poranka – wódki czystej pełna szklanka.";
+    toast[87] = "Jak mawiają Francuzi – co stoi to do buzi.";
+    toast[88] = "Pijany żyje dwa razy krócej, ale widzi dwa razy więcej.";
+    toast[89] = "Sen wzmacnia, wódka usypia. Wniosek: wódka wzmacnia.";
+    toast[90] = "Trzeźwość to stan przejściowy.";
+    toast[91] = "Pacierza i wódki nigdy nie odmawiam.";
+    toast[92] = "Sto lat zdrowia, beczka wina, dobry sąsiad i dziewczyna.";
+    toast[93] = "Jan Sebastian, bach!";
+    toast[94] = "Uchyl się duszo, bo ulewa idzie.";
+    toast[95] = "No to na drugą nóżkę";
+    toast[96] = "Pijmy szybciej bo szkłem przejdzie";
+    toast[97] = "Zdrowie pięknych pań, może jeszcze przyjdą";
+    toast[98] = "Pełnych butelek nie skupują";
+    toast[99] = "Słuchaczy Radia Maryja: Zdrowaś Mario.";
+    toast[100] = "Za kobiety, za konie i za tych którzy je dosiadają.";
+    toast[101] = "No to jeszcze po kropelce póki wódka jest w butelce.";
+    toast[102] = "Zdrowie mężczyzn ze stojącymi... przed nimi kieliszkami, oraz za panie które im dają... te kieliszki wypić.";
+    toast[103] = "W górę szklanki koleżanki.";
+    toast[104] = "Zdrowie pięknych pań i mojej żony też.";
+    toast[105] = "Żeby nam się dobrze działo, w dzień wisiało, w nocy. stało.";
+    toast[106] = "To My bracia budowlani, nigdy trzeźwi zawsze najebani!";
+    toast[107] = "Chopin gdyby żył - to by pił.";
+
+    var min = 0;
+    var max = 107;
+
+    function losowanie_toastu() {
+
+        var numer = Math.floor(Math.random() * (max - min)) + min;
+
+        document.getElementById('toast_tekst').innerHTML = toast[numer];
+
+    }
+</script>
+
+</html>
